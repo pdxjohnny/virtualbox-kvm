@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'dev'
+      - 'patch-1'
   pull_request:
     branches:
       - 'dev'
@@ -31,7 +32,7 @@ jobs:
       run: |
         ./configure --with-kvm --disable-kmods --disable-docs --disable-hardening --disable-java
         source ./env.sh
-        kmk
+        kmk -j $(($(nproc) * 4))
     - name: Archive
       if: github.event_name == 'push'
       run: |
