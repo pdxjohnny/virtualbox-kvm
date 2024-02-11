@@ -29,6 +29,20 @@ workload.
 Prebuilt packages for the latest development commit of of VirtualBox KVM can be
 found at https://github.com/cyberus-technology/virtualbox-kvm/releases/tag/dev-build
 
+Optionally download the sha384sums and validate.
+
+```shell
+$ sha384sum -c dev-build.tar.gz.sha384sums
+dev-build.tar.gz: OK
+```
+
+Unpack the archive and run the VirtualBox binary.
+
+```shell
+$ tar xvzf dev-build.tar.gz
+$ out/linux.amd64/release/bin/VirtualBox
+```
+
 ## Building from source
 
 The process of building VirtualBox from source can be found
