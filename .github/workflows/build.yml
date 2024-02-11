@@ -13,9 +13,7 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v4
-      if: false
     - name: Install Dependencies
-      if: false
       run: |
         sudo apt-get update -y
         sudo apt-get install -y acpica-tools chrpath doxygen g++-multilib libasound2-dev libcap-dev \
@@ -28,15 +26,12 @@ jobs:
           mesa-common-dev subversion yasm zlib1g-dev glslang-tools \
           libc6-dev-i386 lib32stdc++6 libtpms-dev
     - name: Build
-      if: false
       run: |
         ./configure --with-kvm --disable-kmods --disable-docs --disable-hardening --disable-java
         source ./env.sh
         kmk
     - name: Archive
       run: |
-        mkdir out
-        echo test > out/README.md
         tar czvf dev-build.tar.gz out/
     - uses: ncipollo/release-action@v1
       with:
