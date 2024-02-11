@@ -26,8 +26,12 @@ workload.
 
 ## How to use
 
-There are no prebuilt packages of VirtualBox KVM and it needs to be built from
-source. The process of building VirtualBox from source can be found
+Prebuilt packages for the latest development commit of of VirtualBox KVM can be
+found at https://github.com/cyberus-technology/virtualbox-kvm/releases/tag/dev-build
+
+## Building from source
+
+The process of building VirtualBox from source can be found
 [on virtualbox.org](https://www.virtualbox.org/wiki/Linux%20build%20instructions) and only
 minor adjustments are required to build VirtualBox with KVM as a backend.
 
